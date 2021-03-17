@@ -8,3 +8,8 @@ def index(request):
     # html = "<html><body>It is now %s.</body></html>" % now
     # return HttpResponse(html)
     return render(request, "index.html", context={"now": now})
+
+
+def profile(request):
+    username = request.user.username
+    return render(request, "profile.html", context={"username": "Hello " + username})
