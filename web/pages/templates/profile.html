@@ -6,7 +6,13 @@
 </head>
 <body>
     <p>
-        {{ username }}
+        {% if request.user.is_authenticated %}
+            Hello {{ request.user.username }}
+        {% else %}
+            I don't know you.
+        {% endif %}
+
+
     </p>
 
 </body>
