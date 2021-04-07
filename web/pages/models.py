@@ -3,7 +3,7 @@ from django.db import models
 
 class Language(models.Model):
     name = models.CharField(verbose_name="Имя", max_length=50, unique=True)
-    complexity = models.PositiveSmallIntegerField(verbose_name="complexity", default=50)
+    complexity = models.PositiveSmallIntegerField(verbose_name="Сложность", default=50)
 
     def __str__(self) -> str:
         return self.name

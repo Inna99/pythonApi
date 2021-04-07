@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <p>
-        {% if request.user.is_authenticated %}
-            Hello {{ request.user.username }}
-        {% else %}
-            I don't know you.
-        {% endif %}
+{% extends 'base.html' %}
+{% block body %}
+<p>
+    {% if request.user.is_authenticated %}
+        Hello {{ request.user.username }}
+    {% else %}
+        I don't know you.
+    {% endif %}
 
 
-    </p>
-
-</body>
-</html>
+</p>
+{% endblock %}
