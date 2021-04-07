@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Language(models.Model):
-    name = models.CharField(verbose_name="Имя", max_length=50, unique=True)
+    name = models.CharField(verbose_name="Имя", max_length=50, unique=True, primary_key=True)
     complexity = models.PositiveSmallIntegerField(verbose_name="Сложность", default=50)
 
     def __str__(self) -> str:
