@@ -1,15 +1,42 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<h1>Language</h1>
-<ul>
-{% for language in object_list %}
-    <li>{{ language.name }} - {{ language.complexity }}
-        <a href="{% url 'languages-delete' pk=language.pk %}" class="btn btn-warning" role="button">Delete language</a>
-        <a href="{% url 'languages-update' pk=language.pk %}" class="btn btn-info" role="button">Update language</a>
-    </li>
-{% empty %}
+<h1>Languages:</h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Complexity</th>
+      <th>Delete</th>
+      <th>Update</th>
+    </tr>
+  </thead>
+  <tbody>
+
+        {% for language in object_list %}
+            <tr>
+      <td>{{ language.name }}</td>
+      <td>{{ language.complexity }}</td>
+      <td><a href="{% url 'languages-delete' pk=language.pk %}" class="btn btn-warning" role="button">Delete language</a></td>
+      <td><a href="{% url 'languages-update' pk=language.pk %}" class="btn btn-info" role="button">Update language</a></td>
+    </tr>
+  {% empty %}
     <li>No languages yet.</li>
 {% endfor %}
-</ul>
+
+  </tbody>
+</table>
+<!--<ul>-->
+<!--{% for language in object_list %}-->
+<!--    <li>{{ language.name }} - {{ language.complexity }}-->
+
+<!--        <a href="{% url 'languages-delete' pk=language.pk %}" class="btn btn-warning" role="button">Delete language</a>-->
+<!--        <a href="{% url 'languages-update' pk=language.pk %}" class="btn btn-info" role="button">Update language</a>-->
+<!--    </li>-->
+
+<!--{% empty %}-->
+<!--    <li>No languages yet.</li>-->
+<!--{% endfor %}-->
+<!--</ul>-->
 {% endblock %}
