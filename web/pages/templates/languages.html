@@ -1,24 +1,15 @@
 {% extends 'base.html' %}
 {% block body %}
-<p> Languages</p>
-<!-- html form -->
-<!--<form action="/team_name_url/" method="post">-->
-<!--    <label for="language_name">Enter name of language: </label>-->
-<!--    <input id="language_name" type="text" name="language_field" value="Default language">-->
-<!--    <input type="submit" value="OK">-->
-<!--    <label for="complexity">Enter complexity: </label>-->
-<!--    <input id="complexity" type="text" name="complexity_field" value="Default complexity">-->
-<!--    <input type="submit" value="OK">-->
-<!--</form>-->
 
-<!-- django form -->
-
-
-<form action="" method="POST">
-  {% csrf_token %}
-    {{ form.as_p }}
-  <input type="submit" value="Add language">
-</form>
-
-<button class="btn btn-warning" type="button">bootstrap-элемент</button>
+<h1>Language</h1>
+<ul>
+{% for language in object_list %}
+    <li>{{ language.name }} - {{ language.complexity }}
+        <a href="{% url 'languages-delete' pk=language.pk %}" class="btn btn-warning" role="button">Delete language</a>
+        <a href="{% url 'languages-update' pk=language.pk %}" class="btn btn-info" role="button">Update language</a>
+    </li>
+{% empty %}
+    <li>No languages yet.</li>
+{% endfor %}
+</ul>
 {% endblock %}
