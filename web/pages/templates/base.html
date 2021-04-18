@@ -14,13 +14,37 @@
       crossorigin="anonymous">
   </head>
   <body>
+  <!-- Создадим шапку сайта -->
+  <nav class="navbar navbar-default" style="background-color: #11CC11">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Main</a>
+      </div>
 
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">About us</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <!-- Ваше содержимое начинается здесь -->
-    <div class="container"> <a href="{% url 'languages' %}"> Показать все языки</a>
+  <div class="container-fluid">
+    <h1>  </h1>
+    <div class="row">
+      <div class="col-md-3" style="background-color: #ff9999">
+            <div class="container"> <a href="{% url 'languages' %}">Show all languages</a>
     </div>
-    <div class="container"> <a href="{% url 'languages-create' %}"> Создать язык</a>
+    <div class="container"> <a href="{% url 'languages-create' %}"> Create language</a>
     </div>
-    {% block body %} {% endblock %}
+      </div>
+      <div class="col-md-9" style="background-color: #009999">
+        {% block body %} {% endblock %}
+      </div>
+    </div>
+  </div>
+
   <!-- Ваше содержимое заканчивается здесь -->
 
 <!--      Bootstrap-->

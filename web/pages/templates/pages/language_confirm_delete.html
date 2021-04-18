@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block body %}
-<p> Languages</p>
+<!--<p> Languages</p>-->
 
 <form action="" method="POST">
   {% csrf_token %}
     <p>Are you sure you want to delete the author: {{ language }}?</p>
   <input type="submit" value="Yes delete">
+  <a href="{% url 'languages' %}" class="btn btn-info" role="button">No</a>
 </form>
 
 {% endblock %}

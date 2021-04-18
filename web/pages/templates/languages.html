@@ -2,7 +2,6 @@
 {% block body %}
 
 <h1>Languages:</h1>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <table class="table table-dark">
   <thead>
     <tr>
@@ -13,7 +12,6 @@
     </tr>
   </thead>
   <tbody>
-
         {% for language in object_list %}
             <tr>
       <td>{{ language.name }}</td>
@@ -24,19 +22,6 @@
   {% empty %}
     <li>No languages yet.</li>
 {% endfor %}
-
   </tbody>
 </table>
-<!--<ul>-->
-<!--{% for language in object_list %}-->
-<!--    <li>{{ language.name }} - {{ language.complexity }}-->
-
-<!--        <a href="{% url 'languages-delete' pk=language.pk %}" class="btn btn-warning" role="button">Delete language</a>-->
-<!--        <a href="{% url 'languages-update' pk=language.pk %}" class="btn btn-info" role="button">Update language</a>-->
-<!--    </li>-->
-
-<!--{% empty %}-->
-<!--    <li>No languages yet.</li>-->
-<!--{% endfor %}-->
-<!--</ul>-->
 {% endblock %}
